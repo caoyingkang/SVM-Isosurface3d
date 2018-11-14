@@ -4,12 +4,17 @@ Implementation of nonlinear SVM (with SMO algorithm), as well as isosurface visu
 - Basics:
 
   - Quadratic programming involved:
+    $$
+    \max_\alpha W(\alpha)= \max_\alpha \left[ \sum_{i=1}^{n}\alpha_i - \frac{1}{2} \sum_{i,j=1}^{n} y_i y_j \alpha_i \alpha_j K(x_i, x_j) \right]
+    $$
 
-    ![](http://latex.codecogs.com/gif.latex?\\max_\\alpha W(\\alpha)=\\max_\\alpha\\left[\\sum_{i=1}^{n}\\alpha_i-\\frac{1}{2}\\sum_{i,j=1}^{n}y_iy_j\\alpha_i\\alpha_jK(x_i,x_j)\\right])
-
+    $$
     s.t. ~~~~ 0 \le \alpha_i \le C ~~~~~ i=1,\cdots,n
+    $$
 
+    $$
     \sum_{i=1}^{n} \alpha_i y_i =0
+    $$
 
 
   - Kernel trick used: *RBF Kernel* $K(x,z) = \exp(-\frac{\left\|x-z\right\|^2}{2\sigma^2})$;
